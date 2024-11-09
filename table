@@ -1,0 +1,9 @@
+create table projectinfo(
+    projectname varchar(50),
+    Emp1 varchar(15),
+    Emp2 varchar(15),
+    Emp3 varchar(15),
+    Emp4 varchar(15),
+    Emp5 varchar(15),
+    Emp1 varchar(15)
+);

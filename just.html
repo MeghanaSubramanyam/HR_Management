@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Show Password Example</title>
+  <style>
+    .input-group-addon {
+      position: relative;
+    }
+
+    .eye-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .checkbox-inline {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- <div class="input-group">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-lock"></i>
+    </span>
+    <input type="password" name="password" id="Psw" class="form-control" placeholder="Enter Password">
+    <i class="fa fa-eye-slash eye-icon" aria-hidden="true" onclick="passwordeyes(this);"></i>
+  </div> -->
+  <div class="checkbox-inline">
+    <input type="checkbox" id="showPasswordCheckbox" onclick="togglePasswordVisibility()">
+    <label for="showPasswordCheckbox">Show Password</label>
+  </div>
+
+
+<script>
+  function passwordeyes(icon) {
+    var passwordInput = document.getElementById('Psw');
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      icon.classList.remove('fa-eye-slash');
+      icon.classList.add('fa-eye');
+    } else {
+      passwordInput.type = 'password';
+      icon.classList.remove('fa-eye');
+      icon.classList.add('fa-eye-slash');
+    }
+  }
+
+  function togglePasswordVisibility() {
+    var passwordInput = document.getElementById('Psw');
+    var showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
+
+    if (showPasswordCheckbox.checked) {
+      passwordInput.type = 'text';
+    } else {
+      passwordInput.type = 'password';
+    }
+  }
+</script>
+
+</body>
+</html>
